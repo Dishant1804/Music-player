@@ -11,10 +11,11 @@ import Appcss from "./Styles/app.scss"
 function App() {
   const [songs, Setsongs] = useState(data());
   const [CurrentSong, SetCurrentsong] = useState(songs[0]);
+  const [isplaying, setIsplaying] = useState(false);
   return (
     <div>
       <Song Currentsong={CurrentSong} />
-      <Player CurrentSong={CurrentSong} />
+      <Player isplaying={isplaying} setIsplaying={setIsplaying} CurrentSong={CurrentSong} />
     </div>
   )
 }

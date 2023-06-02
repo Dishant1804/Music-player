@@ -2,11 +2,18 @@ import React, { useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faBackward, faForward, faPause } from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({CurrentSong}) => {
+const Player = ({CurrentSong ,isplaying, setIsplaying}) => {
     const audioRef = useRef(null);
     //adding events
     const playSongHandler = () => {
-        audioRef.current.play();
+        if(isplaying){
+            audioRef.current.pause();
+            setIsplaying(!isplaying);
+        }
+        else{
+            audioRef.current.play();
+            setIsplaying(!isplaying);
+        }
     }
     return (
         <div className="player">
