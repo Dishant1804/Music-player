@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import AppStyleSheet from './Styles/app.scss'
+//impoerting components
 import Song from "./components/Song";
 import Player from "./components/Player";
 import Music from "./Util";
+//importing css
+import Appcss from "./Styles/app.scss"
+
+
 
 function App() {
   const [songs, Setsongs] = useState(Music());
-  const [Currentsong, SetCurrentsong] = useState(songs[7]);
+  const [CurrentSong, SetCurrentsong] = useState(songs[0]);
   return (
     <div>
-      <Song Currentsong={Currentsong} />
-      <Player playsong={Currentsong} />
+      <Song Currentsong={CurrentSong} />
+      <Player playsong={CurrentSong} />
     </div>
   )
 }
