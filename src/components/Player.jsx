@@ -1,12 +1,10 @@
 import React, { useRef } from 'react'
-//importinf fontpacks
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faBackward, faForward, faPause } from '@fortawesome/free-solid-svg-icons';
 
 const Player = ({CurrentSong}) => {
-    //adding references
     const audioRef = useRef(null);
-    //adding event handlers
+    //adding events
     const playSongHandler = () => {
         audioRef.current.play();
     }
@@ -22,7 +20,7 @@ const Player = ({CurrentSong}) => {
                 <FontAwesomeIcon onClick={playSongHandler} icon={faPlay} size="2xl" />
                 <FontAwesomeIcon icon={faForward} size="2xl" />
             </div>
-            {/* <audio ref={audioRef} src='{CurrentSong.music}' /> */}
+            <audio ref={audioRef} src={CurrentSong.audio}/>
         </div>
     )
 }
